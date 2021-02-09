@@ -295,58 +295,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div class="container">
         <h2>Register Here</h2>
         <div class="login-form-grids">
-          <h6 class="textcenter">Login information</h6>
           <form action="#" method="post">
             <input
-              id="tFristName"
+              id="fNameReg"
               type="text"
               placeholder="First Name..."
               required=" "
             />
-            <small id="errorFN" style="margin: 2px 0px"></small>
+            <small class="error" id="errorFN"></small>
             <input
-              id="tLastName"
+              id="lNameReg"
               type="text"
               placeholder="Last Name..."
               required=" "
             />
-            <small id="errorLN" style="margin: 2px 0px"></small>
+            <small class="error" id="errorLN"></small>
             <input
-              id="tEmail"
+              id="EmailReg"
               type="email"
               placeholder="Email Address"
               required=" "
             />
-            <small id="errorE" style="margin: 2px 0px"></small>
+            <small class="error" id="errorE"></small>
             <input
-              id="tPassword"
+              id="passwordReg"
               type="password"
               placeholder="Password"
               required=" "
             />
-            <small id="errorP" style="margin: 2px 0px"></small>
+            <small class="error" id="errorP"></small>
             <input
-              id="tConfirPassword"
+              id="CPReg"
               type="password"
               placeholder="Password Confirmation"
               required=" "
             />
-            <small id="errorCP" style="margin: 2px 0px"></small>
-            <small id="errorSN" style="margin: 2px 0px"></small>
-            <div class="register-check-box">
-              <div class="check">
-                <label class="checkbox"
-                  ><input
-                    id="tCheckAccept"
-                    type="checkbox"
-                    name="checkbox"
-                  /><i> </i>I accept the terms and conditions</label
-                >
-                <small id="errorA" style="margin: 2px 0px"></small>
-              </div>
-            </div>
-			<input id="tSubmitRegister" type="submit" value="Register" />
-			<small id="success" style="margin: 2px 0px;"></small>
+            <small class="error" id="errorCP"></small>
+            <input
+              onclick="validateRegister();"
+              type="submit"
+              value="Register"
+            />
           </form>
         </div>
         <div class="register-home">
@@ -544,8 +533,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       });
     </script>
     <!-- //main slider-banner -->
-    <!-- user.js -->
-    <script src="js/user.js"></script>
-    <!-- // user.js -->
+    <!--Register JavaScript -->
+    <script src="js/Register-Login.js"></script>
   </body>
 </html>

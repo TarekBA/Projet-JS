@@ -299,13 +299,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           data-wow-delay=".5s"
         >
           <form>
-            <input type="email" placeholder="Email Address" required=" " />
-            <input type="password" placeholder="Password" required=" " />
-
-            <input type="submit" value="Login" />
+            <input
+              id="emailLogin"
+              type="email"
+              placeholder="Email Address"
+              required=" "
+            />
+            <input
+              id="passwordLogin"
+              type="password"
+              placeholder="Password"
+              required=" "
+            />
+            <input
+              onclick="validAccLogin()"
+              type="submit"
+              value="Login"
+            />
           </form>
         </div>
-
         <p>
           <a href="registered.html">Register Here</a> (Or) go back to
           <a href="index.html"
@@ -457,6 +469,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
     </div>
     <!-- //footer -->
+    <!-- Login JavaScript -->
+    <script src="js/Register-Login.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- top-header and slider -->
