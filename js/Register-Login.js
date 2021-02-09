@@ -1,4 +1,3 @@
-// Création de compte et validation 
 function validateRegister() {
 
   let FNameVal = document.getElementById("fNameReg").value;
@@ -53,10 +52,11 @@ function validateRegister() {
     });
     localStorage.setItem("users", JSON.stringify(dataObj));
     alert("You Have Successfully Register")
-    window.location.href = "";
+    window.location.href = "about.html";
   }
 }
-// Validation de Login 
+
+
 function validAccLogin() {
 
   let userEmailVal = document.getElementById("emailLogin").value;
@@ -67,9 +67,11 @@ function validAccLogin() {
 
   if (user !== undefined) {
     if (user.emailAdress=="admin@admin.com" && user.password=="admin") {
-      window.location.href = "";
+      window.location.href = "admin-product-management.html";
     }
-    window.location.href = "";
+    if (user.emailAdress!=="admin@admin.com" && user.password!=="admin") {
+      window.location.href = "gourmet.html";
+    }
   } else {
     alert("Please check your Email and Password!");
   }
