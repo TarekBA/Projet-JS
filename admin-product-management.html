@@ -289,7 +289,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- crud-produits -->
     <div class="checkout">
       <div class="container">
-        <h2>LIST OF PRODUCTS MANAGEMENT:</h2>
+        <h2>LIST OF PRODUCTS MANAGEMENT :</h2>
         <div class="checkout-right">
           <table class="timetable_sub">
             <thead>
@@ -303,69 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </tr>
             </thead>
             <tbody id="rowProdt">
-              <!-- <tr class="rem1">
-							<td class="invert">1</td>
-							<td class="invert-image"><a href="single.html"><img src="images/1.png" alt=" " class="img-responsive" /></a></td>
-							<td class="invert">
-								<div class="quantity"> 
-									<div class="quantity-select">                           
-										<div class="entry value-minus">&nbsp;</div>
-										<div class="entry value"><span>1</span></div>
-										<div class="entry value-plus active">&nbsp;</div>
-									</div>
-								</div>
-							</td>
-							<td class="invert">Tata Salt</td>
-							
-							<td class="invert">$290.00</td>
-							<td class="invert">
-								<div class="rem">
-									<div class="close1"> </div>
-								</div>
-							</td>
-						</tr>
-						<tr class="rem2">
-							<td class="invert">2</td>
-							<td class="invert-image"><a href="single.html"><img src="images/2.png" alt=" " class="img-responsive" /></a></td>
-							<td class="invert">
-								<div class="quantity"> 
-									<div class="quantity-select">                           
-										<div class="entry value-minus">&nbsp;</div>
-										<div class="entry value"><span>1</span></div>
-										<div class="entry value-plus active">&nbsp;</div>
-									</div>
-								</div>
-							</td>
-							<td class="invert">Fortune oil</td>
-						
-							<td class="invert">$250.00</td>
-							<td class="invert">
-								<div class="rem">
-									<div class="close2"> </div>
-								</div>
-							</td>
-						</tr>
-						<tr class="rem3">
-							<td class="invert">3</td>
-							<td class="invert-image"><a href="single.html"><img src="images/3.png" alt=" " class="img-responsive" /></a></td>
-							<td class="invert">
-								<div class="quantity"> 
-									<div class="quantity-select">                           
-										<div class="entry value-minus">&nbsp;</div>
-										<div class="entry value"><span>1</span></div>
-										<div class="entry value-plus active">&nbsp;</div>
-									</div>
-								</div>
-							</td>
-							<td class="invert">Aashirvaad atta</td>
-							
-							<td class="invert">$15.00</td>
-							<td class="invert">
-								<div class="rem">
-									<div class="close3"> </div>
-								</div>
-							</td>
-						</tr> -->
+              
             </tbody>
           </table>
         </div>
@@ -427,17 +365,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-default"
+                  class="btn btn-secondary text-white"
                   data-dismiss="modal"
                 >
                   Close
                 </button>
                 <button
-                  type="button"
-                  class="btn btn-primary"
+                  type="button" 
+                  class="btn btn-warning text-dark"
                   onclick="updateProduct();"
                 >
-                  Update
+                <i class="fa fa-save"></i>&nbsp;&nbsp;&nbsp;Save
                 </button>
               </div>
             </div>
@@ -450,19 +388,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h4>PRODUCT MANAGEMENT</h4>
             <form class="g-4" method="POST">
               <div style="margin-bottom: 16px">
-                <label class="form-label">Name of Product:</label>
+                <label class="form-label">Name of Product :</label>
                 <input class="form-control" type="text" id="nameProdt" >
               </div>
               <div style="margin-bottom: 16px">
-                <label class="form-label">Quality:</label>
+                <label class="form-label">Quality :</label>
                 <input class="form-control" type="number" id="quatityProdt" >
               </div>
               <div style="margin-bottom: 16px">
-                <label class="form-label">Price:</label>
+                <label class="form-label">Price :</label>
                 <input class="form-control" type="number" id="priceProdt" >
               </div>
               <div>
-                <label class="form-label">Image:</label>
+                <label class="form-label">Image :</label>
                 <input
                   class="file-form-control"
                   type="file"
@@ -470,7 +408,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   accept="image/*"
                 >
               </div>
-              <button type="button" class="btn btn-primary" onclick="productManagement()"style="margin-top: 32px">ADD PRODUCT</button>
+              <button type="button" class="btn btn-primary" onclick="productManagement()"style="margin-top: 32px"><i class="fa fa-upload"></i>&nbsp;&nbsp;&nbsp;ADD PRODUCT</button>
             </form>
           </div>
           <div class="clearfix"></div>
