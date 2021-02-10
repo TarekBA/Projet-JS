@@ -14,13 +14,13 @@ function ShowProduct() {
                         <td class="invert">${dataProductObj[i].nameProduct}</td>
                         <td class="invert">${
                           dataProductObj[i].priceProduct
-                        }$</td>
+                        }<i class="fa fa-usd"></i></td>
                         <td class="invert">
                             <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success text-white" onclick="editProduct(${i})">
-                                <i class="fas fa-edit"></i> Edit
+                            <i class="fa fa-edit"></i>&nbsp;&nbsp;&nbsp;Edit
                             </button>
                             <button class="btn btn-danger text-white" onclick="deleteProduct(${i})">
-                                <i class="fas fa-trash-alt"></i> Delete
+                                <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Delete
                             </button>
                         </td>
                     </tr>`;

@@ -27,7 +27,6 @@ function productManagement() {
         document.getElementById("imageProdt").value = "";
         // affichage
         ShowProduct();
-
       }
       fileReader.readAsDataURL(fileToLoad);
   }
