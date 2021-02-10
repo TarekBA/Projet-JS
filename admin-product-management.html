@@ -397,7 +397,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <form>
                   <div class="form-group">
                     <label class="control-label">Name of Product:</label>
-                    <input type="text" class="form-control" id="nameProd">
+                    <input type="text" class="form-control" id="nameProd" />
                   </div>
                   <div class="form-group">
                     <label class="control-label">Quatity:</label>
@@ -405,11 +405,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       type="number"
                       class="form-control"
                       id="quatityProd"
-                    >
+                    />
                   </div>
                   <div class="form-group">
                     <label class="control-label">Price:</label>
-                    <input type="number" class="form-control" id="priceProd">
+                    <input type="number" class="form-control" id="priceProd" />
                   </div>
                   <div>
                     <label class="form-label">Image:</label>
@@ -418,9 +418,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       type="file"
                       id="imageProd"
                       accept="image/*"
-                    >
+                    />
                   </div>
-                  <input type="hidden" id="indexToSave" class="form-control">
+                  <input type="hidden" id="indexToSave" class="form-control" />
                 </form>
               </div>
               <div class="modal-footer">
@@ -450,26 +450,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <form class="g-4" method="POST">
               <div style="margin-bottom: 16px">
                 <label class="form-label">Name of Product:</label>
-                <input class="form-control" type="text" id="nameProdt">
+                <input class="form-control" type="text" id="nameProdt" >
               </div>
               <div style="margin-bottom: 16px">
                 <label class="form-label">Quality:</label>
-                <input class="form-control" type="number" id="qualityProdt">
+                <input class="form-control" type="number" id="quatityProdt" >
               </div>
               <div style="margin-bottom: 16px">
                 <label class="form-label">Price:</label>
-                <input class="form-control" type="number" id="priceProdt">
+                <input class="form-control" type="number" id="priceProdt" >
               </div>
               <div>
                 <label class="form-label">Image:</label>
-                <input class="file-form-control" type="file" id="imageProdt" accept="image/*">
+                <input
+                  class="file-form-control"
+                  type="file"
+                  id="imageProdt"
+                  accept="image/*"
+                >
               </div>
-              <input
-                class="btn btn-primary"
-                onclick="productManagement()"
-                value="Add new product"
-                style="margin-top: 32px"
-              >
+              <button type="button" class="btn btn-primary" onclick="productManagement()"style="margin-top: 32px">ADD PRODUCT</button>
             </form>
           </div>
           <div class="clearfix"></div>
@@ -657,10 +657,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       });
     </script>
     <!-- //main slider-banner -->
-    
+
     <!--admin js-->
     <script src="js/admin-add.js"></script>
-    <script src="js/add-edit.js"></script>
+    <script src="js/admin-edit.js"></script>
     <script src="js/admin-crud-produit.js"></script>
     <!--fontawesome js-->
     <script src="https://kit.fontawesome.com/e777136b18.js"></script>
