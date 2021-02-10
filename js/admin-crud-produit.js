@@ -33,7 +33,7 @@ function deleteProduct(i) {
   let rowProdt = document.getElementById("rowProdt");
   if (confirm(`Are you sure to delete this line Nbr(${i + 1}) ?`)) {
     rowProdt.deleteRow(i);
-    dataProductObj.splice(i, 1); 
+    dataProductObj.splice(i, 1);
     localStorage.setItem("produits", JSON.stringify(dataProductObj));
     ShowProduct();
   }
@@ -43,17 +43,39 @@ function updateProduct() {
   let nameProd = document.getElementById("nameProd");
   let quatityProd = document.getElementById("quatityProd");
   let priceProd = document.getElementById("priceProd");
-  let imageProd = document.getElementById("imageProd");
   let inputSave = document.getElementById("indexToSave");
-  let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
-  let updateNewProduct = {
-    nameProduct: nameProd.value,
-    quatityProduct: quatityProd.value,
-    priceProduct: priceProd.value,
-    imageProduct: imageProd.value
-  };
-  let i = inputSave.value;
-  dataProductObj.splice(i, 1, updateNewProduct);
-  localStorage.setItem("produits", JSON.stringify(dataProductObj));
-  ShowProduct();
+  let imageProd = document.getElementById("imageProd").files;
+  let image = "";
+
+  if (imageProd.length > 0) {
+    let fileToLoad = imageProd[0];
+    let fileReader = new FileReader();
+    fileReader.onload = function (fileLoadedEvent) {
+      image = fileLoadedEvent.target.result;
+      // save image  in localStorage
+      let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
+      let updateNewProduct = {
+        nameProduct: nameProd.value,
+        quatityProduct: quatityProd.value,
+        priceProduct: priceProd.value,
+        imageProduct: image,
+      };
+      let i = inputSave.value;
+      dataProductObj.splice(i, 1, updateNewProduct);
+      localStorage.setItem("produits", JSON.stringify(dataProductObj));
+      ShowProduct();
+    };
+    fileReader.readAsDataURL(fileToLoad);
+  } else {
+    let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
+    let updateNewProduct = {
+      nameProduct: nameProd.value,
+      quatityProduct: quatityProd.value,
+      priceProduct: priceProd.value,
+    };
+    let i = inputSave.value;
+    dataProductObj.splice(i, 1, updateNewProduct);
+    localStorage.setItem("produits", JSON.stringify(dataProductObj));
+    ShowProduct();
+  }
 }
