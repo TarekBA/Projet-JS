@@ -1,5 +1,5 @@
 function ShowProduct() {
-  let dataProductObj = JSON.parse(localStorage.getItem("prodcuts")) || [];
+  let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
   let rowProdt = document.getElementById("rowProdt");
   let rowProduct = "";
   for (let i = 0; i < dataProductObj.length; i++) {
@@ -14,7 +14,7 @@ function ShowProduct() {
                         <td class="invert">${dataProductObj[i].nameProduct}</td>
                         <td class="invert">${
                           dataProductObj[i].priceProduct
-                        }</td>
+                        }$</td>
                         <td class="invert">
                             <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success text-white" onclick="editProduct(${i})">
                                 <i class="fas fa-edit"></i> Edit
@@ -29,14 +29,14 @@ function ShowProduct() {
 }
 
 function deleteProduct(i) {
-  let dataProductObj = JSON.parse(localStorage.getItem("prodcuts")) || [];
+  let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
   let rowProdt = document.getElementById("rowProdt");
   if (confirm(`Are you sure to delete this line Nbr(${i + 1}) ?`)) {
     rowProdt.deleteRow(i);
-    dataProductObj.splice(i, 1);
+    dataProductObj.splice(i, 1); 
+    localStorage.setItem("produits", JSON.stringify(dataProductObj));
+    ShowProduct();
   }
-  localStorage.setItem("products", JSON.stringify(dataProductObj));
-  ShowProduct();
 }
 
 function updateProduct() {
@@ -45,7 +45,7 @@ function updateProduct() {
   let priceProd = document.getElementById("priceProd");
   let imageProd = document.getElementById("imageProd");
   let inputSave = document.getElementById("indexToSave");
-  let dataProductObj = JSON.parse(localStorage.getItem("prodcuts")) || [];
+  let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
   let updateNewProduct = {
     nameProduct: nameProd.value,
     quatityProduct: quatityProd.value,
@@ -54,6 +54,6 @@ function updateProduct() {
   };
   let i = inputSave.value;
   dataProductObj.splice(i, 1, updateNewProduct);
-  localStorage.setItem("products", JSON.stringify(dataProductObj));
+  localStorage.setItem("produits", JSON.stringify(dataProductObj));
   ShowProduct();
 }

@@ -13,7 +13,6 @@ function productManagement() {
         image = fileLoadedEvent.target.result;
         // save image  in localStorage
         let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
-        console.log(dataProductObj);
         dataProductObj.push({
           nameProduct: nameProdt.value,
           quatityProduct: quatityProdt.value,
@@ -26,6 +25,8 @@ function productManagement() {
         document.getElementById("quatityProdt").value = "";
         document.getElementById("priceProdt").value = "";
         document.getElementById("imageProdt").value = "";
+        // affichage
+        ShowProduct();
 
       }
       fileReader.readAsDataURL(fileToLoad);
