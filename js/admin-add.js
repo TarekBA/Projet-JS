@@ -1,37 +1,34 @@
-var openFile = function(event) {
-  var input = event.target;
 
-  var reader = new FileReader();
-  reader.onload = function(){
-    var dataURL = reader.result;
-    var imageProdt = document.getElementById("imageProdt");
-    imageProdt.src = dataURL;
-  };
-  reader.readAsDataURL(input.files[0]);
-};
 function productManagement() {
   let nameProdt = document.getElementById("nameProdt");
   let quatityProdt = document.getElementById("quatityProdt");
   let priceProdt = document.getElementById("priceProdt");
-  let imageProdt = document.getElementById("imageProdt");
+  let imageProdt = document.getElementById("imageProdt").files;
+  let image = "";
+  if(imageProdt.length > 0)
+  {
+      let fileToLoad = imageProdt[0];
+      let fileReader = new FileReader();
+      fileReader.onload = function(fileLoadedEvent) {
+        image = fileLoadedEvent.target.result;
+        // save image  in localStorage
+        let dataProductObj = JSON.parse(localStorage.getItem("produits")) || [];
+        console.log(dataProductObj);
+        dataProductObj.push({
+          nameProduct: nameProdt.value,
+          quatityProduct: quatityProdt.value,
+          priceProduct: priceProdt.value,
+          imageProduct: image
+        });
+        localStorage.setItem("produits", JSON.stringify(dataProductObj));
+        //  vider les champs
+        document.getElementById("nameProdt").value = "";
+        document.getElementById("quatityProdt").value = "";
+        document.getElementById("priceProdt").value = "";
+        document.getElementById("imageProdt").value = "";
 
-  let dataProductObj = JSON.parse(localStorage.getItem("prodcuts")) || [];
-  dataProductObj.push({
-    nameProduct: nameProdt.value,
-    quatityProduct: quatityProdt.value,
-    priceProduct: priceProdt.value,
-    imageProduct: imageProdt.value
-  });
-  localStorage.setItem("products", JSON.stringify(dataProductObj));
+      }
+      fileReader.readAsDataURL(fileToLoad);
+  }
+
 }
-/*function readFile() {
-    if (this.files && this.files[0]) {
-        var FR= new FileReader();
-        FR.addEventListener("load", function(e) {
-            document.getElementById("img").src = e.target.result;
-            document.getElementById("b64").innerHTML = e.target.result;
-        });             
-        FR.readAsDataURL( this.files[0] );
-    }               
-}
-document.getElementById("inp").addEventListener("change", readFile);   */

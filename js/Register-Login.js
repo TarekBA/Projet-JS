@@ -59,7 +59,7 @@ function validateRegister() {
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <strong>Well done!</strong>You Have Successfully Register.
     </div>`
-    window.location.href = "login.html";
+    window.open("file:///C:/Users/Maryouma/Desktop/projet%20js/login.html","_blank");
   }
 }
 
@@ -75,9 +75,9 @@ function validAccLogin() {
 
   if (user !== undefined) {
     if (user.emailAdress == "admin@admin.com" && user.password == "admin") {
-      window.location.href = "admin-product-management.html";
+      window.open("file:///C:/Users/Maryouma/Desktop/projet%20js/admin-product-management.html","_blank");
     }
-    window.location.href = "gourmet.html";
+    window.open("file:///C:/Users/Maryouma/Desktop/projet%20js/gourmet.html","_blank");
   } else {
     // alert("Please check your Email and Password!");
     document.getElementById("msg").innerHTML=`<div class="alert alert-warning alert-dismissible" role="alert">
