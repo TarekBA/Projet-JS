@@ -55,8 +55,11 @@ function validateRegister() {
       password: passwordVal
     });
     localStorage.setItem("users", JSON.stringify(dataObj));
-    alert("You Have Successfully Register");
-    window.location.href = "about.html";
+     document.getElementById("msg").innerHTML=`<div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Well done!</strong>You Have Successfully Register.
+    </div>`
+    window.location.href = "login.html";
   }
 }
 
@@ -76,6 +79,10 @@ function validAccLogin() {
     }
     window.location.href = "gourmet.html";
   } else {
-    alert("Please check your Email and Password!");
+    // alert("Please check your Email and Password!");
+    document.getElementById("msg").innerHTML=`<div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong>Please check your Email and Password!
+    </div>`
   }
 }
